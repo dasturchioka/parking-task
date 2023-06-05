@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import TheForm from "@/components/TheForm.vue";
 import TheHeader from "@/components/TheHeader.vue";
 import TheMap from "@/components/TheMap.vue";
 import { useSpaceStore } from "@/stores/space";
@@ -15,6 +16,7 @@ onMounted(async () => {
   <main class="wrapper font-main">
     <h1 v-if="spaceStore.loading">Loading...</h1>
     <div v-else class="container mx-auto px-2">
+      <TheForm v-if="spaceStore.openModal"/>
       <TheHeader/>
       <TheMap/>
       <div class="guide my-7 flex items-center space-x-6">

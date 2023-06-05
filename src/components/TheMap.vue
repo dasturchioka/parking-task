@@ -14,6 +14,7 @@ const spaceStore = useSpaceStore();
           :class="['box rounded', space.parked ? 'bg-gray' : 'bg-blue']"
         >
           <button
+            @click="spaceStore.selectSpace(space)"
             :disabled="space.parked"
             class="w-full h-full text-white font-bold text-sm disabled:bg-gray disabled:cursor-not-allowed"
           >
@@ -33,6 +34,7 @@ const spaceStore = useSpaceStore();
           :class="['box rounded', space.parked ? 'bg-gray' : 'bg-blue']"
         >
           <button
+            @click="spaceStore.selectSpace(space)"
             :disabled="space.parked"
             class="w-full h-full text-white font-bold text-sm disabled:bg-gray disabled:cursor-not-allowed"
           >
@@ -52,6 +54,7 @@ const spaceStore = useSpaceStore();
           :class="['box rounded', space.parked ? 'bg-gray' : 'bg-blue']"
         >
           <button
+            @click="spaceStore.selectSpace(space)"
             :disabled="space.parked"
             class="w-full h-full text-white font-bold text-sm disabled:bg-gray disabled:cursor-not-allowed"
           >
@@ -71,6 +74,7 @@ const spaceStore = useSpaceStore();
           :class="['box rounded', space.parked ? 'bg-gray' : 'bg-blue']"
         >
           <button
+            @click="spaceStore.selectSpace(space)"
             :disabled="space.parked"
             class="w-full h-full text-white font-bold text-sm disabled:bg-gray disabled:cursor-not-allowed"
           >
@@ -103,7 +107,11 @@ const spaceStore = useSpaceStore();
               garage.parked ? 'bg-gray' : 'bg-blue',
             ]"
           >
-            <button :disabled="garage.parked" class="w-full h-full font-bold text-white disabled:bg-gray disabled:cursor-not-allowed">
+            <button
+              @click="spaceStore.selectSpace(garage)"
+              :disabled="garage.parked"
+              class="w-full h-full font-bold text-white disabled:bg-gray disabled:cursor-not-allowed"
+            >
               G{{ garage.order }}
             </button>
           </div>
