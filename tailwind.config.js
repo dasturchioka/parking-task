@@ -18,6 +18,9 @@ export default {
           DEFAULT: "#D0D0D0",
           lightest: "#F6F6F6",
         },
+        blue: {
+          DEFAULT: "#0085FF"
+        }
       },
     },
   },
