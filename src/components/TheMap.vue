@@ -13,7 +13,10 @@ const spaceStore = useSpaceStore();
           :key="space.id"
           :class="['box rounded', space.parked ? 'bg-gray' : 'bg-blue']"
         >
-          <button class="w-full h-full text-white font-bold text-sm">
+          <button
+            :disabled="space.parked"
+            class="w-full h-full text-white font-bold text-sm disabled:bg-gray disabled:cursor-not-allowed"
+          >
             {{ space.order }}
           </button>
         </div>
@@ -29,7 +32,10 @@ const spaceStore = useSpaceStore();
           :key="space.id"
           :class="['box rounded', space.parked ? 'bg-gray' : 'bg-blue']"
         >
-          <button class="w-full h-full text-white font-bold text-sm">
+          <button
+            :disabled="space.parked"
+            class="w-full h-full text-white font-bold text-sm disabled:bg-gray disabled:cursor-not-allowed"
+          >
             {{ space.order }}
           </button>
         </div>
@@ -45,7 +51,10 @@ const spaceStore = useSpaceStore();
           :key="space.id"
           :class="['box rounded', space.parked ? 'bg-gray' : 'bg-blue']"
         >
-          <button class="w-full h-full text-white font-bold text-sm">
+          <button
+            :disabled="space.parked"
+            class="w-full h-full text-white font-bold text-sm disabled:bg-gray disabled:cursor-not-allowed"
+          >
             {{ space.order }}
           </button>
         </div>
@@ -61,7 +70,10 @@ const spaceStore = useSpaceStore();
           :key="space.id"
           :class="['box rounded', space.parked ? 'bg-gray' : 'bg-blue']"
         >
-          <button class="w-full h-full text-white font-bold text-sm">
+          <button
+            :disabled="space.parked"
+            class="w-full h-full text-white font-bold text-sm disabled:bg-gray disabled:cursor-not-allowed"
+          >
             {{ space.order }}
           </button>
         </div>
@@ -91,7 +103,7 @@ const spaceStore = useSpaceStore();
               garage.parked ? 'bg-gray' : 'bg-blue',
             ]"
           >
-            <button class="w-full h-full font-bold text-white">
+            <button :disabled="garage.parked" class="w-full h-full font-bold text-white disabled:bg-gray disabled:cursor-not-allowed">
               G{{ garage.order }}
             </button>
           </div>
