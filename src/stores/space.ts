@@ -105,17 +105,17 @@ export const useSpaceStore = defineStore("space", () => {
 
   async function bookSpace() {
     car.value.space = selectedSpace.value;
-    console.log(spaces.value[selectedSpace.value.zone]);
-    
-    const getIndex = spaces.value[selectedSpace.value.zone].findIndex((obj) => {
-      return obj.id === selectedSpace.value.id;
-    });
-
-    spaces.value[selectedSpace.value.zone][getIndex].parked = true;
-    spaces.value[selectedSpace.value.zone][getIndex].car = car.value;
     cars.value.push(car.value);
 
-    toggleModal(false);
+    const zone = spaces.value[`zone${selectedSpace.value.zone}`];
+    const foundObject = zone.find((item) => item.id === selectedSpace.value.id);
+
+    if (foundObject) {
+      foundObject.parked = true;
+      foundObject.car = car.value;
+
+      toggleModal(false);
+    }
 
     return {
       spaces: spaces.value,
@@ -125,10 +125,20 @@ export const useSpaceStore = defineStore("space", () => {
 
   function toggleModal(value: boolean) {
     if (!value) {
+      openModal.value = false;
       selectedSpace.value = {};
       return;
     }
     openModal.value = value;
+  }
+
+  function clear() {
+    car.value.driver = "";
+    car.value.mark = "";
+    car.value.model = "";
+    car.value.number = "";
+    car.value.period = 0;
+    car.value.year = 0;
   }
 
   function selectSpace(space: Space) {
@@ -173,5 +183,6 @@ export const useSpaceStore = defineStore("space", () => {
     car,
     totalChargeForSpace,
     bookSpace,
+    clear
   };
 });

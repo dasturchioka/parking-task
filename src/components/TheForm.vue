@@ -127,6 +127,7 @@ const spaceStore = useSpaceStore();
               TAYYOR
             </button>
             <button
+            @click="spaceStore.clear()"
               type="button"
               class="button bg-white rounded border border-gray text-gray font-bold px-4 py-2"
             >
